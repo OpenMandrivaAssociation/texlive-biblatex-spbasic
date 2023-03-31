@@ -1,6 +1,6 @@
 Name:		texlive-biblatex-spbasic
 Version:	61439
-Release:	1
+Release:	2
 Summary:	A BibLaTeX style emulating Springer's old spbasic.bst
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-spbasic
