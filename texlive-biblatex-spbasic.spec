@@ -3,7 +3,7 @@ Version:	61439
 Release:	2
 Summary:	A BibLaTeX style emulating Springer's old spbasic.bst
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-spbasic
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-spbasic
 License:	lppl
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.doc.r%{version}.tar.xz
