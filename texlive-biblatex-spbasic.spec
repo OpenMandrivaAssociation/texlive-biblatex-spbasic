@@ -1,37 +1,24 @@
-Name:		texlive-biblatex-spbasic
-Version:	61439
-Release:	2
-Summary:	A BibLaTeX style emulating Springer's old spbasic.bst
+%global tl_name biblatex-spbasic
+%global tl_revision 61439
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.04
+Release:	%{tl_revision}.1
+Summary:	A BibLaTeX style emulating Springers old spbasic.bst
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-spbasic
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/biblatex-spbasic
 License:	lppl
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/biblatex-spbasic.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 This package provides a bibliography and citation style for
-BibLaTeX/biber for typesetting articles for Springer's
-journals. It is the same as the old BibTeX style spbasic.bst.
+BibLaTeX/biber for typesetting articles for Springer's journals. It is
+the same as the old BibTeX style spbasic.bst.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/biblatex-spbasic
-%doc %{_texmfdistdir}/doc/latex/biblatex-spbasic
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
